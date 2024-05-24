@@ -1,3 +1,7 @@
+
+
+
+
 const apiKey = "KT5njo942UnnY5Vdib0EuZBV56dk1bTwSKomfn8p"; // Reemplaza con tu clave de API
 const apodContainer = document.getElementById("apod-container");
 const prevButton = document.getElementById("prev-button");
@@ -143,4 +147,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    themeToggle.addEventListener('change', () => {
+        // Si el checkbox está marcado, cambia al tema oscuro; de lo contrario, cambia al tema claro
+        if (themeToggle.checked) {
+            document.body.classList.remove('light-theme');
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-theme');
+            document.body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Verificar y aplicar el tema almacenado en el almacenamiento local al cargar la página
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.checked = true;
+    } else {
+        document.body.classList.add('light-theme');
+        themeToggle.checked = false;
+    }
+
 });

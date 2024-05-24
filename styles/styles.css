@@ -3,6 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Tema Oscuro */
+.dark-theme {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+/* Tema Claro */
+.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}/* Estilos para botones dentro de la clase box en el tema oscuro */
+.dark-theme .box .button {
+  color: white;
+}
+
+/* Estilos para botones dentro de la clase box en el tema claro */
+.light-theme .box .button {
+  color: black;
+}
+
+#check-theme{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  max-width: 200px;
+}
+
 
 body {
   background: black;
@@ -199,6 +226,9 @@ header {
     width: 100%;
     max-width: none;
     height: auto;
+  }
+  #logo{
+    margin: 10px 10px;
   }
   .card__content {
     padding: 10px;
