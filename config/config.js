@@ -109,14 +109,31 @@ function init() {
     handlePagination();
 }
 init();
+
 document.addEventListener('DOMContentLoaded', (event) => {
     Swal.fire({
         title: 'Disfruta de la experiencia completa',
         text: 'Haz clic en "Aceptar" para reproducir la música de fondo.',
         icon: 'info',
-        showCancelButton: true,
+        width: 600,
+        padding: '3em',
         confirmButtonText: 'Aceptar',
-        cancelButtonText: 'Cancelar'
+        cancelButtonText: 'Cancelar',
+        showCancelButton: true,
+        background: '#fff url(/images/trees.png)',
+        customClass: {
+            popup: 'custom-popup-class',
+            title: 'custom-title-class',
+            content: 'custom-content-class',
+            confirmButton: 'custom-confirm-button-class',
+            cancelButton: 'custom-cancel-button-class'
+        },
+        backdrop: `
+            rgba(0,0,123,0.4)
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+        `
     }).then((result) => {
         if (result.isConfirmed) {
             const audio = document.getElementById('background-music');
