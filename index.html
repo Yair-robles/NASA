@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NASA APOD</title>
@@ -8,82 +8,87 @@
     <link rel="stylesheet" type="text/css" href="styles/dark-ligth.css" />
     <link rel="icon" href="img/NASA.png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://example.com/config.js" integrity="sha256-abc123"></script>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://example.com https://cdn.jsdelivr.net/npm/sweetalert2@11">
-</head>
-<body class="dark-theme">
-
-    <div id="logo"><a href="index.html"><img src="img/NASA.png" /></a></div>
+    <script
+      src="https://example.com/config.js"
+      integrity="sha256-abc123"
+    ></script>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' https://example.com https://cdn.jsdelivr.net/npm/sweetalert2@11"
+    />
+  </head>
+  <body class="dark-theme">
+    <div id="logo">
+      <a href="index.html"><img src="img/NASA.png" /></a>
+    </div>
     <div id="check-theme">
-    <label class="bb8-toggle">
-        <input id="theme-toggle" class="bb8-toggle__checkbox" type="checkbox">
+      <label class="bb8-toggle">
+        <input id="theme-toggle" class="bb8-toggle__checkbox" type="checkbox" />
         <div class="bb8-toggle__container">
-            <div class="bb8-toggle__scenery">
-                <div class="bb8-toggle__star"></div>
-                <div class="bb8-toggle__star"></div>
-                <div class="bb8-toggle__star"></div>
-                <div class="bb8-toggle__star"></div>
-                <div class="bb8-toggle__star"></div>
-                <div class="bb8-toggle__star"></div>
-                <div class="bb8-toggle__star"></div>
-                <div class="tatto-1"></div>
-                <div class="tatto-2"></div>
-                <div class="gomrassen"></div>
-                <div class="hermes"></div>
-                <div class="chenini"></div>
-                <div class="bb8-toggle__cloud"></div>
-                <div class="bb8-toggle__cloud"></div>
-                <div class="bb8-toggle__cloud"></div>
+          <div class="bb8-toggle__scenery">
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="tatto-1"></div>
+            <div class="tatto-2"></div>
+            <div class="gomrassen"></div>
+            <div class="hermes"></div>
+            <div class="chenini"></div>
+            <div class="bb8-toggle__cloud"></div>
+            <div class="bb8-toggle__cloud"></div>
+            <div class="bb8-toggle__cloud"></div>
+          </div>
+          <div class="bb8">
+            <div class="bb8__head-container">
+              <div class="bb8__antenna"></div>
+              <div class="bb8__antenna"></div>
+              <div class="bb8__head"></div>
             </div>
-            <div class="bb8">
-                <div class="bb8__head-container">
-                    <div class="bb8__antenna"></div>
-                    <div class="bb8__antenna"></div>
-                    <div class="bb8__head"></div>
-                </div>
-                <div class="bb8__body"></div>
-            </div>
-            <div class="artificial__hidden">
-                <div class="bb8__shadow"></div>
-            </div>
+            <div class="bb8__body"></div>
+          </div>
+          <div class="artificial__hidden">
+            <div class="bb8__shadow"></div>
+          </div>
         </div>
-    </label>
-</div>
+      </label>
+    </div>
     <div id="apod-container"></div>
     <div id="pagination">
       <div class="box">
-          <button class="button" id="prev-button">BACK</button>
-          <div class="space">
-              <span style="--i: 31" class="star"></span>
-              <span style="--i: 12" class="star"></span>
-              <span style="--i: 57" class="star"></span>
-              <span style="--i: 93" class="star"></span>
-              <span style="--i: 23" class="star"></span>
-              <span style="--i: 70" class="star"></span>
-              <span style="--i: 6" class="star"></span>
-          </div>
+        <button class="button" id="prev-button">BACK</button>
+        <div class="space">
+          <span style="--i: 31" class="star"></span>
+          <span style="--i: 12" class="star"></span>
+          <span style="--i: 57" class="star"></span>
+          <span style="--i: 93" class="star"></span>
+          <span style="--i: 23" class="star"></span>
+          <span style="--i: 70" class="star"></span>
+          <span style="--i: 6" class="star"></span>
+        </div>
       </div>
       <div class="box">
-          <button class="button" id="next-button">NEXT</button>
-          <div class="space">
-              <span style="--i: 31" class="star"></span>
-              <span style="--i: 12" class="star"></span>
-              <span style="--i: 57" class="star"></span>
-              <span style="--i: 93" class="star"></span>
-              <span style="--i: 23" class="star"></span>
-              <span style="--i: 70" class="star"></span>
-              <span style="--i: 6" class="star"></span>
-          </div>
+        <button class="button" id="next-button">NEXT</button>
+        <div class="space">
+          <span style="--i: 31" class="star"></span>
+          <span style="--i: 12" class="star"></span>
+          <span style="--i: 57" class="star"></span>
+          <span style="--i: 93" class="star"></span>
+          <span style="--i: 23" class="star"></span>
+          <span style="--i: 70" class="star"></span>
+          <span style="--i: 6" class="star"></span>
+        </div>
       </div>
-  </div>
+    </div>
 
     <audio id="background-music">
-        <source src="sound/inter.mp3" type="audio/mpeg">
-        Tu navegador no soporta la etiqueta de audio.
+      <source src="sound/inter.mp3" type="audio/mpeg" />
+      Tu navegador no soporta la etiqueta de audio.
     </audio>
 
-    <script src="config/config.js">
-       
-    </script>
-</body>
+    <script src="config/config.js"></script>
+  </body>
 </html>
