@@ -1,8 +1,4 @@
-
-
-
-
-const apiKey = "KT5njo942UnnY5Vdib0EuZBV56dk1bTwSKomfn8p"; // Reemplaza con tu clave de API
+const apiKey = "KT5njo942UnnY5Vdib0EuZBV56dk1bTwSKomfn8p";
 const apodContainer = document.getElementById("apod-container");
 const prevButton = document.getElementById("prev-button");
 const nextButton = document.getElementById("next-button");
@@ -10,7 +6,6 @@ let currentPage = 1;
 const itemsPerPage = 10;
 let dates = [];
 
-// Obtener las fechas de los últimos N días
 function getLastNDates(n) {
     const dates = [];
     const today = new Date();
@@ -22,7 +17,6 @@ function getLastNDates(n) {
     return dates;
 }
 
-// Obtener los APODs para un conjunto de fechas
 function fetchAPODs(dates) {
     const requests = dates.map((date) =>
         fetch(
@@ -32,7 +26,6 @@ function fetchAPODs(dates) {
     return Promise.all(requests);
 }
 
-// Mostrar las imágenes y la información en la página
 function displayAPODs(apods) {
     apodContainer.innerHTML = "";
     apods.forEach((apod) => {
@@ -65,21 +58,16 @@ function displayAPODs(apods) {
     });
 }
 
-// Manejar la paginación con transición y desplazamiento
+
 function handlePagination() {
-    // Ocultar tarjetas actuales
     const currentCards = document.querySelectorAll('.card');
     currentCards.forEach(card => card.classList.remove('show'));
-
-    // Esperar a que las tarjetas se oculten
     setTimeout(() => {
-        // Desplazarse hacia arriba
+
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-
-        // Esperar a que la página se desplace antes de cargar nuevas tarjetas
         setTimeout(() => {
             const startIndex = (currentPage - 1) * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
@@ -87,11 +75,10 @@ function handlePagination() {
             fetchAPODs(currentDates).then(displayAPODs);
             prevButton.disabled = currentPage === 1;
             nextButton.disabled = endIndex >= dates.length;
-        }, 500); // Tiempo para el desplazamiento
-    }, 500); // Tiempo para ocultar las tarjetas
+        }, 500); 
+    }, 500); 
 }
 
-// Eventos de los botones de paginación
 prevButton.addEventListener("click", () => {
     if (currentPage > 1) {
         currentPage--;
@@ -108,7 +95,7 @@ nextButton.addEventListener("click", () => {
 
 // Inicialización
 function init() {
-    const totalItems = 100; // Mostrar las últimas 100 imágenes
+    const totalItems = 100; 
     dates = getLastNDates(totalItems);
     handlePagination();
 }
@@ -141,7 +128,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }).then((result) => {
         if (result.isConfirmed) {
             const audio = document.getElementById('background-music');
-            audio.loop = true; // Hacer que la música se reproduzca en bucle
+            audio.loop = true; 
             audio.play().catch(error => {
                 console.log('No se pudo reproducir la música:', error);
             });
@@ -153,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     
     themeToggle.addEventListener('change', () => {
-        // Si el checkbox está marcado, cambia al tema oscuro; de lo contrario, cambia al tema claro
         if (themeToggle.checked) {
             document.body.classList.remove('light-theme');
             document.body.classList.add('dark-theme');
@@ -165,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Verificar y aplicar el tema almacenado en el almacenamiento local al cargar la página
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-theme');
