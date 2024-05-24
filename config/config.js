@@ -109,3 +109,11 @@ function init() {
     handlePagination();
 }
 init();
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const audio = document.getElementById('background-music');
+    audio.loop = true; // Hacer que la música se reproduzca en bucle
+    audio.play().catch(error => {
+        console.log('Autoplay no se pudo iniciar debido a restricciones del navegador:', error);
+    });
+});
