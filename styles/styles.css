@@ -249,6 +249,9 @@ header {
   .box {
     --size: 2rem;
   }
+  #logo{
+    margin: 10px 10px;
+  }
   .button {
     font-size: 0.6rem;
   }
