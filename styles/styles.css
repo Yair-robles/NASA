@@ -3,33 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* Tema Oscuro */
 .dark-theme {
   background-color: #000000;
   color: #fff;
 }
-
-/* Tema Claro */
 .light-theme {
   background-color: #f8f9fa;
   color: #212529;
-}/* Estilos para botones dentro de la clase box en el tema oscuro */
+}
 .dark-theme .box .button {
   color: white;
 }
 
-/* Estilos para botones dentro de la clase box en el tema claro */
 .light-theme .box .button {
   color: black;
 }
 
-#check-theme{
+#check-theme {
   position: absolute;
   top: 20px;
   right: 10px;
   max-width: 200px;
 }
-
 
 body {
   background: black;
@@ -38,12 +33,11 @@ body {
 }
 
 header {
-  height: 100px; /* Use fixed height instead of percentage */
+  height: 100px;
 }
-
 #logo {
   max-width: 150px;
-  display:flex;
+  display: flex;
   align-items: center;
   align-content: center;
   margin: 0px auto;
@@ -72,7 +66,8 @@ header {
   margin: 30px;
 }
 
-.card img, .card iframe {
+.card img,
+.card iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -94,7 +89,7 @@ header {
   padding: 20px;
   box-sizing: border-box;
   background: black;
-  color: #E9F8F9;
+  color: #e9f8f9;
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   overflow-y: auto;
@@ -134,10 +129,10 @@ header {
 .box {
   max-height: 70px;
   --clr-shadow__border: #d9a1ff;
-  --clr-text: #F6F4EB;
+  --clr-text: #f6f4eb;
   --clr-space: #120e1e;
   --clr-space-gr: #271950;
-  --clr-star: #E9F8F9;
+  --clr-star: #e9f8f9;
   --size: 3rem;
   position: relative;
   outline: 1px solid var(--clr-shadow__border);
@@ -189,11 +184,11 @@ header {
 
 @keyframes space-animation {
   0% {
-      transform: rotate(-30deg) translateY(calc(-52% * var(--i)));
+    transform: rotate(-30deg) translateY(calc(-52% * var(--i)));
   }
 
   100% {
-      transform: rotate(-30deg) translateY(calc(52% * var(--i)));
+    transform: rotate(-30deg) translateY(calc(52% * var(--i)));
   }
 }
 
@@ -227,7 +222,7 @@ header {
     max-width: none;
     height: auto;
   }
-  #logo{
+  #logo {
     margin: 10px 10px;
   }
   .card__content {
@@ -249,14 +244,13 @@ header {
   .box {
     --size: 2rem;
   }
-  #logo{
+  #logo {
     margin: 10px 10px;
   }
   .button {
     font-size: 0.6rem;
   }
   #pagination {
-
     align-items: center;
   }
 }
