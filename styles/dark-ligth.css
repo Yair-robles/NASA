@@ -934,3 +934,9 @@
 .bb8:hover .bb8__head::after {
   background-position: 0 0 !important;
 }
+
+@media (max-width: 768px) {
+  .bb8-toggle {
+    --toggle-size: 7px;
+  }
+}

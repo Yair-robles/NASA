@@ -238,6 +238,9 @@ header {
     font-size: 0.8rem;
     padding: calc(var(--size) / 4) var(--size);
   }
+  #logo img{
+    width: 100px;
+  }
 }
 
 @media (max-width: 480px) {
